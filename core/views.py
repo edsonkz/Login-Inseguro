@@ -1,5 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.hashers import make_password
+from django.contrib.auth.models import User
 from django.views.decorators.csrf import csrf_protect
 from django.contrib.auth.decorators import login_required
 from . import models
@@ -13,7 +15,17 @@ def index(request):
     elif request.method == "POST":
         user = request.POST.get('user')
         senha = request.POST.get('senha')
-        usuario = authenticate(request, username= user, password= senha)
+        senha_hash = make_password(senha)
+        usuario = None
+        s = None
+        for p in User.objects.raw("SELECT * FROM auth_user WHERE username = '" + user + "'"):
+            first = p.password.split('$')[2]
+            print(first)
+            s = make_password(senha, first)
+        
+        for p in User.objects.raw("SELECT * FROM auth_user WHERE username = '" + user + "' AND password = '" + s + "'"):
+            usuario = p
+            print(usuario)
         
         if usuario is not None:
             login(request, usuario)

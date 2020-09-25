@@ -26,7 +26,7 @@
                                 <label for="">
                                     <strong>{{men.user_id.username}}</strong>
                                 </label>
-                            {{men.mensagem}}</p>
+                            {{men.mensagem|safe}}</p>
                         {% empty %}
                             <p>Não há mensagens cadastradas.</p>
                         {% endfor %}
