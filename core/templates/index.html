@@ -1,0 +1,54 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>LOGIN DE SERVIÇO</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+</head>
+
+<body>
+
+    <form class="form" action="{% url 'index' %}" method="POST">
+        {% csrf_token %}
+        <div class="card">
+            <div class="card-top">
+                <h2 class="title">LOGIN</h2>
+                <p>serviço de mensagens</p>
+            </div>
+
+            <div class="card-group">
+
+                <label for="user">Nome de Usuário</label>
+                <input type="text" name="user" id="user" placeholder="digite o seu nome de usuário" value="{{username}}" required>
+
+            </div>
+            <div class="card-group">
+
+                <label for="senha">Senha</label>
+                <input type="password" id="senha" name="senha" placeholder="digite a sua senha" required>
+
+            </div>
+            <div class="card-group">
+
+                <button type="submit" id="confirm">Entrar</button>
+
+            </div>
+        </div>
+
+    </form>
+
+    {% if mensagem %}
+    <script>
+        alert("{{mensagem}}")
+    </script>
+    {% endif %}
+
+</body>
+
+</html>

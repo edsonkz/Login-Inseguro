@@ -1,0 +1,65 @@
+body {
+    background-color: rgb(255, 255, 255);
+    font-family: 'Roboto';
+
+}
+.form{
+    width: 500px;
+    margin: auto;
+    padding-top: 60px;
+
+}
+.card{
+    box-shadow: 1px 1px 5px rgb(67, 71, 71);
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    text-align: center;
+}
+.card-top {
+    text-align: center;
+}
+.card-group {
+    margin-left: 2.3rem;
+    margin-bottom: 10px;
+    width: 80%;
+    height: 100%;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+.card-group > label{
+        color: gray;
+        display: block;
+        text-align: center;
+        width: 80%;
+        margin-top: 20px;
+}
+.card-group > input{
+        border-radius: 5px;
+        outline: 0;
+        width: 90%;
+        height: 30px;
+        padding: 5px;
+        margin: 10px;
+        margin-right: 0;
+}
+.card-group > button{
+
+    background-color: midnightblue;
+    width: 40%;
+    border-radius: 30px;
+    padding: 15px;
+    margin-bottom: 10px;
+    color: mintcream;
+    border: 0px;
+    outline: 0;
+    justify-content: space-between;
+    margin: 4px;
+}
+
+
+.title{
+    color: rgb(33, 11, 110);
+}
